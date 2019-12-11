@@ -17,7 +17,7 @@ function App() {
     <div className="App grid">
       <header className="grid-item header">
         {" "}
-        <DateTime/>
+        <DateTime />
         {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -30,7 +30,7 @@ function App() {
         >
           Learn React
         </a> */}
-        
+
       </header>
 
       <nav className="grid-item nav">
@@ -79,25 +79,41 @@ function App() {
             </tr>
           </tbody>
         </Table>
-        <div className="input-group">
-          <InputGroup className="mb-3 inputbox">
-            <InputGroup.Prepend>
-              {/* <InputGroup.Text id="basic-addon1">@</InputGroup.Text> */}
-            </InputGroup.Prepend>
-            <FormControl
-              placeholder="Username"
-              aria-label="Username"
-              aria-describedby="basic-addon1"
-            />
-          </InputGroup>
-          <div className="input-group-btn">
-            <Button variant="success">Success</Button>
+        <form className="form-inline">
+          <div className="input-group">
+            <InputGroup className="mb-3 inputbox">
+              <div className="form-group">
+                <FormControl
+                  placeholder="number one"
+                  aria-label="num1"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+              <div className="form-group">
+                <FormControl
+                  placeholder="number two"
+                  aria-label="num2"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+
+            <div className="input-group-btn">
+              <Button variant="success">Success</Button>
+            </div>
+            <div className="form-group">
+                <FormControl
+                  placeholder="sum"
+                  aria-label="sum"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+              </InputGroup>
           </div>
-        </div>
+        </form>
 
         <div>
           <p>example</p>
-<FirePlace/>
+          <FirePlace />
         </div>
       </body>
 

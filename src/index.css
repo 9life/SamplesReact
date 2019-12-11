@@ -53,13 +53,12 @@ body {
 .footer {
   grid-area: footer;
 }
-.inputbox {
-  width: 20%!important;
-
-}
 .input-group-btn {
-  padding-left: 10px;
+  padding-left: 5px;
+  padding-right: 10px;
 }
-/* .input-group {
-  width: 40% ;
-} */
+.form-group {
+  padding-right: 5px;
+}
+
+
