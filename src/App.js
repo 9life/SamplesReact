@@ -9,6 +9,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import FirePlace from './FirePlace';
 import DateTime from './DateTime';
+import Calc from './Calc';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -79,37 +80,8 @@ function App() {
             </tr>
           </tbody>
         </Table>
-        <form className="form-inline">
-          <div className="input-group">
-            <InputGroup className="mb-3 inputbox">
-              <div className="form-group">
-                <FormControl
-                  placeholder="number one"
-                  aria-label="num1"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-              <div className="form-group">
-                <FormControl
-                  placeholder="number two"
-                  aria-label="num2"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
 
-            <div className="input-group-btn">
-              <Button variant="success">Success</Button>
-            </div>
-            <div className="form-group">
-                <FormControl
-                  placeholder="sum"
-                  aria-label="sum"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-              </InputGroup>
-          </div>
-        </form>
+        <Calc/>
 
         <div>
           <p>example</p>
