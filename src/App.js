@@ -1,16 +1,17 @@
 import React from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import Table from "react-bootstrap/Table";
-import Button from "react-bootstrap/Button";
-import InputGroup from "react-bootstrap/InputGroup";
-import FormControl from "react-bootstrap/FormControl";
 import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
 import FirePlace from './FirePlace';
 import DateTime from './DateTime';
 import Calc from './Calc';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link ,
+} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -33,22 +34,31 @@ function App() {
         </a> */}
 
       </header>
-
       <nav className="grid-item nav">
-        <Nav
+      <Nav
           variant="tabs"
           sticky="top"
-          defaultActiveKey="/home"
+          defaultActiveKey="/"
           className="flex-column"
         >
-          <Nav.Link href="/home">Active</Nav.Link>
-          <Nav.Link eventKey="link-1">Link</Nav.Link>
-          <Nav.Link eventKey="link-2">Link</Nav.Link>
+          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link eventKey="/calc" href="/calc" >Calc</Nav.Link>
+          <Nav.Link eventKey="/fire" href="/fire">Fire</Nav.Link>
           <Nav.Link eventKey="disabled" disabled>
             Disabled
           </Nav.Link>
         </Nav>
       </nav>
+      
+      <Router>
+      <Switch>
+        <Route exact path="/"></Route>
+        <Route path="/calc"><Calc/></Route>
+        <Route path="/fire"><FirePlace/></Route>
+      </Switch>
+      </Router>
+
+
 
       <body className="grid-item main">
         <Table striped bordered hover>
@@ -81,11 +91,11 @@ function App() {
           </tbody>
         </Table>
 
-        <Calc/>
+        {/* <Calc/> */}
 
         <div>
           <p>example</p>
-          <FirePlace />
+          {/* <FirePlace /> */}
         </div>
       </body>
 
