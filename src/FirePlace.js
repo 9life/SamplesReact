@@ -35,11 +35,11 @@ class FirePlace extends React.Component {
   }
   
   function SetFireMessage(props) {
-    return <h3>Камин горит!</h3>;
+    return <h5>Камин горит!</h5>;
   }
   
   function SnuffOutMessage(props) {
-    return <h3>Камин не горит</h3>;
+    return <h5>Камин не горит</h5>;
   }
   
   function Indicator(props) {
