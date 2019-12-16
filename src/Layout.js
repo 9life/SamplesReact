@@ -15,9 +15,20 @@ const useStyles = makeStyles(theme => ({
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: "center",
+    textAlign: "left",
     color: theme.palette.text.secondary
+  },
+  
+  header:
+  {
+    textAlign: "center",
+  },
+
+  footer:
+  {
+    textAlign: "center",
   }
+  
 }));
 
 export default function Layout(props) {
@@ -27,7 +38,7 @@ export default function Layout(props) {
     <div className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Paper className={classes.paper}>
+          <Paper className={`${classes.paper} ${classes.header}`}>
             <DateTime />
           </Paper>
         </Grid>
@@ -50,7 +61,7 @@ export default function Layout(props) {
         {/* {props.children}
                 </main> */} 
         <Grid item xs={12}>
-          <Paper className={classes.paper}>
+          <Paper className={`${classes.paper} ${classes.footer}`}>
             <p>footer</p>
           </Paper>
         </Grid>
