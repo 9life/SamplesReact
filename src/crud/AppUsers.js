@@ -46,7 +46,7 @@ const AppUsers = () => {
       <div className="flex-large">
   {editing ? (
     <div>
-      <h2>Edit user</h2>
+      <h6>Edit user</h6>
       <EditUserForm
         editing={editing}
         setEditing={setEditing}
@@ -56,7 +56,7 @@ const AppUsers = () => {
     </div>
   ) : (
     <div>
-      <h2>Add user</h2>
+      <h6>Add user</h6>
       <AddUserForm addUser={addUser} />
     </div>
   )}

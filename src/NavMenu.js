@@ -18,7 +18,7 @@ export default function NavMenu() {
      <Nav.Link as={Link} to="/calc" >Calc</Nav.Link>
      <Nav.Link as={Link} to="/fire">Fire</Nav.Link>
      {/* <Nav.Link as={Link} to="/table">Table</Nav.Link> */}
-     <Nav.Link as={Link} to="/crud">CRUD</Nav.Link>
+     <Nav.Link as={Link} to="/crud">CRUD exmpl</Nav.Link>
      <Nav.Link as={Link} eventKey="disabled" disabled>
        Disabled
      </Nav.Link>
