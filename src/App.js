@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import Layout from './Layout';
 import "bootstrap/dist/css/bootstrap.min.css";
-import TableHol from "./TableHol";
+import AppUsers from "./crud/AppUsers";
 import Home from './Home';
 
 export default function App() {
@@ -24,7 +24,7 @@ export default function App() {
         <Route exact path="/" component={Home}/>
         <Route path="/calc" component={Calc}/> 
         <Route path="/fire" component={FirePlace}/>
-        <Route path="/table" component={TableHol}/>
+        <Route path="/crud" component={AppUsers}/>
         <Route render={function() {
           return <p>Not Found</p>}
         }/>

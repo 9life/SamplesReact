@@ -39,7 +39,7 @@ body {
 }
 .grid-item {
   border: 1px solid #e4e4e4;
-  text-align: center;
+ /* text-align: center;*/
 }
 .header {
   grid-area: header;
