@@ -1,11 +1,7 @@
 import React from "react";
-// import logo from "./logo.svg";
 import "./App.css";
-// import Table from "react-bootstrap/Table";
 import FirePlace from './FirePlace';
-// import DateTime from './DateTime';
 import Calc from './Calc';
-// import Nav from './Nav';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,6 +11,7 @@ import {
 import Layout from './Layout';
 import "bootstrap/dist/css/bootstrap.min.css";
 import TableHol from "./TableHol";
+import Home from './Home';
 
 export default function App() {
   return (
@@ -24,9 +21,10 @@ export default function App() {
     <Layout>
 
       <Switch>
-        <Route exact path="/" component={TableHol}/>
+        <Route exact path="/" component={Home}/>
         <Route path="/calc" component={Calc}/> 
         <Route path="/fire" component={FirePlace}/>
+        <Route path="/table" component={TableHol}/>
         <Route render={function() {
           return <p>Not Found</p>}
         }/>
