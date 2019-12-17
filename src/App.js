@@ -12,6 +12,7 @@ import Layout from './Layout';
 import "bootstrap/dist/css/bootstrap.min.css";
 import AppUsers from "./crud/AppUsers";
 import Home from './Home';
+import HolCalc from './HolidayCalc/AppHC';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
         <Route exact path="/" component={Home}/>
         <Route path="/calc" component={Calc}/> 
         <Route path="/fire" component={FirePlace}/>
+        <Route path="/holcalc" component={HolCalc}/>
         <Route path="/crud" component={AppUsers}/>
         <Route render={function() {
           return <p>Not Found</p>}
