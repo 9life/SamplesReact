@@ -4,8 +4,6 @@ import UserTable from './UserTable';
 import AddUserForm from './AddUserForm';
 import EditUserForm from './EditUserForm';
 
-  
-
 const AppUsers = () => {
   const usersData = [
     { id: 1, name: 'Tania', username: 'floppydiskette' },

@@ -1,39 +1,63 @@
-import React, { useState } from 'react';
-
-import Popper from '@material-ui/core/Popper';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-import Paper from '@material-ui/core/Paper';
-import { makeStyles } from '@material-ui/core/styles';
-
-import Calc from '../Calc';
-import {
-    BrowserRouter as Router,
-    Link ,
-  } from "react-router-dom";
+import React, { useState } from "react";
+import AddItem from "./AddItem";
+import DataTable from './DataTable';
 
 
-const useStyles = makeStyles(theme => ({
-    root: {
-      display: 'flex',
-    },
-    paper: {
-      marginRight: theme.spacing(2),
-    },
-  }));
 
-export default function AppHC() {
-    const classes = useStyles();
+/*const usersData = [
+  { id: 1, name: 'Tania', username: 'floppydiskette' },
+  { id: 2, name: 'Craig', username: 'siliconeidolon' },
+  { id: 3, name: 'Ben', username: 'benisphere' },
+]
 
-    return (
-            <div className={classes.root}>
-              <Paper className={classes.paper}>
-                <MenuList>
-                  <MenuItem component={Link} to="/calc">Calc</MenuItem>
-                  <MenuItem>My account</MenuItem>
-                  <MenuItem>Logout</MenuItem>
-                </MenuList>
-              </Paper>
-              </div>
-    )
+const [users, setUsers] = useState(usersData)
+
+const addUser = user => {
+  user.id = users.length + 1
+  setUsers([...users, user])
+}*/
+
+const AppHC = () => {
+
+  function createData(
+    id,
+    name,
+    allWorkDays,
+    holDays,
+    holMoney,
+    workDays,
+    workMoney,
+    total
+  ) {
+    return {id, name, allWorkDays, holDays, holMoney, workDays, workMoney, total };
+  };
+  
+  const rowsData = [
+    createData(1, "december 2019 14d", 22, 14, 0, 12, 0, 0),
+    createData(2, "january 2020 2d", 17, 2, 0, 15, 0, 0),
+    createData(3, "febrary 2020 14d", 19, 17, 0, 9, 0, 0)
+  ];
+  
+  const [rows, setRows] = useState(rowsData);
+  
+  const addRow = row => {
+    row.id= rows.length+1;
+    //rows.push(rows.length);
+    setRows([...rows, row]);
+    console.log("add function: ", {rows});
+  }
+
+  const deleteRow = id => {
+    setRows(rows.filter(row => row.id !== id))
+  }
+
+  return (
+    <>
+      <AddItem addRow={addRow}/>
+<br/>
+      <DataTable rows={rows} deleteRow={deleteRow}/>
+    </>
+  );
 }
+
+export default  AppHC;
