@@ -16,7 +16,6 @@ import HolCalc from './HolidayCalc/AppHC';
 import ProductList from './ShopingCartExmpl/ShopApp';
 import Shop from './shoppingCart/ShoppingApp';
 import todoApp from './todoList/todoApp';
-import appAdding from './addtotable/appAdding';
 
 export default function App() {
   return (
@@ -30,7 +29,6 @@ export default function App() {
         <Route path="/calc" component={Calc}/> 
         <Route path="/fire" component={FirePlace}/>
         <Route path="/todo" component={todoApp}/>
-        <Route path="/exmpltable" component={appAdding}/>
         <Route path="/holcalc" component={HolCalc}/>
         <Route path="/crud" component={AppUsers}/>
         <Route path="/productlistexmpl" component={ProductList}/>

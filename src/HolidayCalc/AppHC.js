@@ -26,10 +26,12 @@ const AppHC = () => {
   
   const [rows, setRows] = useState(rowsData);
   
-  const addRow = (row) => {
+  const addRow = (row, middleSalary, holMoney, workMoney, result) => {
     row.id= rows.length+1;
-    //row.result = r;
-    //rows.push(rows.length);
+    row.result = result;
+    row.middleSalary = middleSalary;
+    row.holMoney = holMoney;
+    row.workMoney = workMoney;
     setRows([...rows, row]);
     console.log("add function: ", rows);
   }

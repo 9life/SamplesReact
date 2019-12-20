@@ -32,7 +32,6 @@ export default function NavMenu() {
                   <MenuItem component={Link} to="/calc" >Calc</MenuItem>
                   <MenuItem component={Link} to="/fire">Fire</MenuItem>
                   <MenuItem component={Link} to="/todo">todo</MenuItem>
-                  <MenuItem component={Link} to="/exmpltable">exmpl table</MenuItem>
                   <MenuItem component={Link} to="/holcalc">Hol calc</MenuItem>
                   <MenuItem component={Link} to="/crud">CRUD exmpl</MenuItem>
                   <MenuItem component={Link} to="/productlistexmpl">shop exmpl</MenuItem>

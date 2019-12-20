@@ -12,7 +12,7 @@ const StyleTextField = withStyles({
     // margin: '10px 0px 10px 0px',
     // padding: '10px 0px 10px 0px',
 
-    width: 150
+    width: 120
   }
 })(TextField);
 
@@ -40,10 +40,10 @@ const AddItem = (props) => {
     salary: '',
     allWorkDays: '',
     holDays: '',
-    //holMoney: 0,
+    holMoney: 0,
     workDays: '',
-    //wokrMoney: 0,
-    //middleSalary: 0,
+    wokrMoney: 0,
+    middleSalary: 0,
     result: '',
   };
 
@@ -56,61 +56,33 @@ const AddItem = (props) => {
     console.log(state);
   }
 
+  let middleSalary = null;
+  let holMoney = null;
+  let workMoney = null;
+  let result = null;
+
   const executeTotal = () => {
-    let middleSalary = null;
     let salary = state.salary;
     let holDays = state.holDays;
     let allWorkDays = state.allWorkDays;
     let workDays = state.workDays;
 
     middleSalary = salary / 29.3;
-
-    console.log("salary middle = ", { middleSalary });
     middleSalary = Math.round(middleSalary);
 
-    console.log("state.middleSalary", state.middleSalary);
-    let holMoney = middleSalary * holDays;
-    console.log("money holiday = ", { holMoney });
-    console.log("all work days = ", { allWorkDays });
-    console.log("work days = ", { workDays });
-    let workMoney = salary / allWorkDays * workDays;
-    console.log("money work = ", { workMoney });
-
-    let result = Math.round(holMoney) + Math.round(workMoney);
-    console.log("total = ", result);
-    setState({ ...state, middleSalary: middleSalary, holMoney: holMoney, workMoney: workMoney, result: result });
-    console.log(state);
+    holMoney = middleSalary * holDays;
+    workMoney = Math.round(salary / allWorkDays * workDays);
+    result = Math.round(holMoney) + Math.round(workMoney);
   }
 
-  // useEffect (() => {
-  //   setState(state.result);
-  // })
-
-  const onClick =(event) =>{
-    event.preventDefault();
+  const onClick =() =>{
     executeTotal();
-    //setState({ ...prevState, fixtion: ''});
-    props.addRow(state);
-//   setState(initialState)
-  }
-  const inputRef = React.useRef(null)
-
-  const handleSubbmit = (event) => {
-    event.preventDefault();
-    props.addRow(state);
+    props.addRow(state, middleSalary, holMoney, workMoney, result);
   }
 
   return (
     <Paper className={classes.paper}>
-      <form className={classes.root}
-
-      // onSubmit={event => {
-      //   event.preventDefault()
-      //   if (!state.name || !state.salary) return
-      //   props.addRow(state)
-      //   setState(initialState)
-      // }}
-      >
+      <form className={classes.root} >
         <StyleTextField
           id="standard-basic"
           label="Name"
@@ -151,16 +123,16 @@ const AddItem = (props) => {
           value={state.workDays}
           onChange={handleInputChange}
         />
-        <Fab color="primary" aria-label="add" onClick={onClick} ref={inputRef}>
+        <Fab color="primary" aria-label="add" onClick={onClick}>
           <AddIcon />
         </Fab>
-        <StyleTextField
+        {/* <StyleTextField
           id="standard-basic"
           label="Result"
           variant="outlined"
           name="result"
           value={state.result}
-        />
+        /> */}
       </form>
     </Paper>
   );
