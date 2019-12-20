@@ -42,7 +42,7 @@ const AddItem = (props) => {
     holDays: '',
     holMoney: 0,
     workDays: '',
-    wokrMoney: 0,
+    workMoney: 0,
     middleSalary: 0,
     result: '',
   };
@@ -78,6 +78,7 @@ const AddItem = (props) => {
   const onClick =() =>{
     executeTotal();
     props.addRow(state, middleSalary, holMoney, workMoney, result);
+    console.log("after add", state);
   }
 
   return (

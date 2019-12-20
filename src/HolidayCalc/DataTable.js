@@ -37,7 +37,8 @@ return(
               </TableRow>
             </TableHead>
             <TableBody>
-              {props.rows.map(row => (
+              {props.rows.length > 0 ? (
+              props.rows.map(row => (
                 <TableRow key={row.id}>
                   <TableCell component="th" scope="row">
                     {row.name}
@@ -56,8 +57,16 @@ return(
                       <DelIcon />
                     </Fab>
                   </TableCell>
+                  
                 </TableRow>
-              ))}
+                ))) : (
+                  <TableRow>
+                    <TableCell align='center'  colSpan={7}>
+                    No users
+                    </TableCell>
+                  </TableRow>
+                  
+              )}
             </TableBody>
           </Table>
         </TableContainer>
