@@ -56,51 +56,6 @@ const AddItem = (props) => {
     console.log(state);
   }
 
-  const dataNum = {
-    num1: 0,
-    num2: 0,
-    num3: 0,
-    result: 0,
-  }
-
-  const [nums, setNums] = useState(dataNum);
-
-  const handleChange = event => {
-    const { name, value } = event.target
-
-    setNums({ ...nums, [name]: value })
-    console.log(nums);
-  }
-
-  const func = () => {
-    let num1 = nums.num1;
-    let num2 = nums.num2;
-    let num3 = num1*2;
-
-    let result = num2 + num3;
-    result = num2+num1;
-    console.log(nums);
-    //setNums({...nums, num3: num3});
-    setNums({...nums, result: result, num3: num3});
-    console.log(nums);
-  }
-
-
-
-  const withPrevState = () => {
-    // setState((prevState) => ({
-    //   ...prevState,
-    //   result: 'not empty',
-    // }));
-    let t = 55;
-    setState({ result: t });
-    //setState({result:888});
-    console.log(state);
-    setState({ state });
-    console.log(state);
-    console.log("result", state.result)
-  }
-
   const executeTotal = () => {
     let middleSalary = null;
     let salary = state.salary;
@@ -156,34 +111,6 @@ const AddItem = (props) => {
       //   setState(initialState)
       // }}
       >
-{/* <div>
-<StyleTextField
-          id="standard-basic"
-          label="Num1"
-          variant="outlined"
-          name="num1"
-          value={nums.num1}
-          onChange={handleChange}
-        />
-        <StyleTextField
-          id="standard-basic"
-          label="Num2"
-          variant="outlined"
-          name="num2"
-          value={nums.num2}
-          onChange={handleChange}
-        />
-        <StyleTextField
-          id="standard-basic"
-          label="result"
-          variant="outlined"
-          name="result"
-          value={nums.result}
-        />
-        <Fab color="primary" aria-label="add" onClick={func}>
-          <AddIcon />
-        </Fab>
-</div> */}
         <StyleTextField
           id="standard-basic"
           label="Name"

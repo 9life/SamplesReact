@@ -1,16 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 //import "./todoApp.css";
-import todoList from './todoList';
+import TodoList from './todoList';
 
 var destination = document.querySelector("#container");
 
 const todoApp =() => {
     return(
         <div>
-           <todoList/>
+           <TodoList/>
+           
         </div>//,
-       // destination
+        //destination
     );
 }
 

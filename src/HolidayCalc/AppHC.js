@@ -3,21 +3,6 @@ import AddItem from "./AddItem";
 import DataTable from './DataTable';
 import Example from './example';
 
-
-
-/*const usersData = [
-  { id: 1, name: 'Tania', username: 'floppydiskette' },
-  { id: 2, name: 'Craig', username: 'siliconeidolon' },
-  { id: 3, name: 'Ben', username: 'benisphere' },
-]
-
-const [users, setUsers] = useState(usersData)
-
-const addUser = user => {
-  user.id = users.length + 1
-  setUsers([...users, user])
-}*/
-
 const AppHC = () => {
 
   function createData(
@@ -41,11 +26,12 @@ const AppHC = () => {
   
   const [rows, setRows] = useState(rowsData);
   
-  const addRow = row => {
+  const addRow = (row) => {
     row.id= rows.length+1;
+    //row.result = r;
     //rows.push(rows.length);
     setRows([...rows, row]);
-    console.log("add function: ", row.id);
+    console.log("add function: ", rows);
   }
 
   const deleteRow = id => {
