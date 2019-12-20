@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AddItem from "./AddItem";
 import DataTable from './DataTable';
+import Example from './example';
 
 
 
@@ -44,18 +45,23 @@ const AppHC = () => {
     row.id= rows.length+1;
     //rows.push(rows.length);
     setRows([...rows, row]);
-    console.log("add function: ", {rows});
+    console.log("add function: ", row.id);
   }
 
   const deleteRow = id => {
     setRows(rows.filter(row => row.id !== id))
   }
 
+
   return (
     <>
-      <AddItem addRow={addRow}/>
+      <AddItem addRow={addRow} />
 <br/>
-      <DataTable rows={rows} deleteRow={deleteRow}/>
+      <DataTable rows={rows} deleteRow={deleteRow} 
+/>
+      {/* <br/>
+      <p>example</p>
+      <Example/> */}
     </>
   );
 }
