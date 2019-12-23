@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 //import "./todoApp.css";
-import TodoList from './todoList';
+import TodoForm from './TodoForm';
+import { Typography } from "@material-ui/core";
+import TodoList from './TodoList';
 
-var destination = document.querySelector("#container");
 
-const todoApp =() => {
+const TodoApp =() => {
+    const [todos, setTodos] = useState([]);
     return(
         <div>
-           <TodoList/>
-           
-        </div>//,
-        //destination
+            <Typography component="h5" variant="h6">
+            Todos
+            </Typography>
+           <TodoForm saveTodo={(todoText) => {
+               const trimmedText = todoText.trim();
+
+               if (trimmedText.length > 0) { setTodos([...todos, trimmedText]);}
+           }}/>
+           <TodoList todos={todos} />
+        </div>
     );
 }
 
-export default todoApp;
+export default TodoApp;

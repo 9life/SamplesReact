@@ -1,32 +1,27 @@
-import React, {useState} from 'react';
+import React from 'react';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+import ListItemText from '@material-ui/core/ListItemText';
+import Checkbox from '@material-ui/core/Checkbox';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
-const todoList = () => {
-   // const [item, setItem] = useState('');
-
-    // const addItem= (e) => {
-    //     if (_inputElement.value !== "") {
-    //         let newItem = {
-    //             text: _inputElement.value,
-    //             key: Date.now(),
-    //         }
-    //         setItem( (prevState) => {
-    //             item: prevState.item.concat(newItem)
-    //         })
-    //     }
-    // }
-    //onSubmit={addItem}
-    //ref={(a) => _inputElement = a}
-    return (
-        <div className="todoListMain">
-            <div className="header">
-                <form >
-                    <input 
-                    placeholder="enter task">
-                    </input>
-                    <button type="submit">+</button>
-                </form>
-            </div>
-        </div>
+const TodoList = ({todos, deleteTodos}) => {
+    return(
+    <List>
+        {todos.map((todo, index) => (
+            <ListItem key={index.toString()}>
+                <Checkbox tabIndex={-1} />
+                <ListItemText primary={todo} />
+                <ListItemSecondaryAction>
+                    <IconButton aria-label="Delete" onClick={() => {deleteTodos(index);}}>
+                        <DeleteIcon/>
+                    </IconButton>
+                </ListItemSecondaryAction>
+            </ListItem>
+        ))}
+    </List>
     )
-}
-export default todoList;
+};
+export default TodoList;

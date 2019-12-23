@@ -29,8 +29,6 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-
-
 const AddItem = (props) => {
   const classes = useStyles();
 
@@ -127,13 +125,6 @@ const AddItem = (props) => {
         <Fab color="primary" aria-label="add" onClick={onClick}>
           <AddIcon />
         </Fab>
-        {/* <StyleTextField
-          id="standard-basic"
-          label="Result"
-          variant="outlined"
-          name="result"
-          value={state.result}
-        /> */}
       </form>
     </Paper>
   );
