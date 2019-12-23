@@ -8,6 +8,7 @@ import TodoList from './TodoList';
 
 const TodoApp =() => {
     const [todos, setTodos] = useState([]);
+
     return(
         <div>
             <Typography component="h5" variant="h6">
@@ -18,7 +19,10 @@ const TodoApp =() => {
 
                if (trimmedText.length > 0) { setTodos([...todos, trimmedText]);}
            }}/>
-           <TodoList todos={todos} />
+           <TodoList todos={todos} deleteTodos={(todoIndex) => {
+               const newTodos = todos.filter((_, index) => index !== todoIndex);
+               setTodos(newTodos);
+           }} />
         </div>
     );
 }
