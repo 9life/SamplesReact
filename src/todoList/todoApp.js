@@ -8,8 +8,12 @@ import useTodoState from './useTodoState';
 
 
 const TodoApp =() => {
+    const dataTodo = [
+        "buy milk", "give disks", "cleane room"
+    ]
+    
     //const [todos, setTodos] = useState([]);
-    const {todos, addTodo, deleteTodo} = useTodoState([]);
+    const {todos, addTodo, deleteTodo} = useTodoState(dataTodo);
 
     return(
         <div>
