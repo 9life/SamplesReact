@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 //import "./todoApp.css";
 import TodoForm from './TodoForm';
-import { Typography } from "@material-ui/core";
+import { Typography, Paper } from "@material-ui/core";
 import TodoList from './TodoList';
 import useTodoState from './useTodoState';
+import TodoDoneApp from "./exampleDone/TodoDoneApp";
 
 
 const TodoApp =() => {
@@ -12,11 +13,18 @@ const TodoApp =() => {
         "buy milk", "give disks", "cleane room"
     ]
     
+    
     //const [todos, setTodos] = useState([]);
     const {todos, addTodo, deleteTodo} = useTodoState(dataTodo);
 
+    var todoItems = [];
+todoItems.push({index: 1, value: "learn react", done: false});
+todoItems.push({index: 2, value: "Go shopping", done: true});
+todoItems.push({index: 3, value: "buy flowers", done: true});
+
     return(
-        <div>
+        <>
+        <Paper>
             <Typography component="h5" variant="h6">
             Todos
             </Typography>
@@ -34,7 +42,12 @@ const TodoApp =() => {
         //        setTodos(newTodos);
         //    }} 
            />
-        </div>
+         {/* //  <TodoAppDone initItems={todoItems}/> */}
+        </Paper>
+        <Paper>
+            <TodoDoneApp/>
+        </Paper>
+        </>
     );
 }
 
