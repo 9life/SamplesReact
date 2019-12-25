@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 //import localforage from "localforage";
 import ReactDOM from "react-dom";
-import TodoItem from "./TodoItem";
 import { Typography, Paper, TextField, List } from "@material-ui/core";
 import './style.css';
+import TodoInputForm from './TodoInputForm';
+import TodoList from './TodoList';
 
 
 const TodoDoneApp = () => {
@@ -16,16 +17,6 @@ const TodoDoneApp = () => {
     const [todos, setTodos] = useState(initTodo);
 
     const [value, setValue] = useState("");
-
-    //   useEffect(() => {
-    //     localforage.setItem("todos", todos);
-    //   }, [todos]);
-
-    //   useEffect(() => {
-    //     localforage.getItem("todos", (_, value) => {
-    //       if (value) setTodos(value);
-    //     });
-    //   }, []);
 
     const onValueChange = ({ target: { value } }) => {
         setValue(value);
@@ -64,43 +55,18 @@ const TodoDoneApp = () => {
         setTodos(todos.filter(todo => todo.id !== id));
     };
 
+    const listActive = todos.filter(todo => !todo.status);
+    const listInactive = todos.filter(todo => todo.status);
+    
     return (
         <div>
             <p>Todos with completed action</p>
-            <TextField
-                variant="outlined"
-                placeholder="Add todo"
-                margin="normal"
-                onChange={onValueChange}
-                onKeyDown={handleKeyPress}
-                // {event => { setValue(event.target.value); }}
-                value={value}
-            />
+            <TodoInputForm value={value} onValueChange={onValueChange} handleKeyPress={handleKeyPress}/>
             <p>active todos</p>
-            <List id="incomplete-tasks">
-                {todos
-                    .filter(todo => !todo.status)
-                    .map(todo => (
-                        <TodoItem
-                            todo={todo}
-                            handleCheckboxChange={handleCheckboxChange}
-                            deleteTodo={deleteTodo}
-                        />
-                    ))}
-            </List>
+            <TodoList handleCheckboxChange={handleCheckboxChange} deleteTodo={deleteTodo} list={listActive}/>
             <p>inactive todos</p>
-            <List id="completed-tasks">
-                {todos
-                    .filter(todo => todo.status)
-                    .map(todo => (
-                        <TodoItem
-                            todo={todo}
-                            handleCheckboxChange={handleCheckboxChange}
-                            deleteTodo={deleteTodo}
-                        />
-                    ))}
-            </List>
-
+            <TodoList id="completed-tasks" handleCheckboxChange={handleCheckboxChange} deleteTodo={deleteTodo} list={listInactive}/>
+            {/* <TodoCompletedList todos={todos} handleCheckboxChange={handleCheckboxChange} deleteTodo={deleteTodo} status={true}/> */}
         </div>
     )
 }
