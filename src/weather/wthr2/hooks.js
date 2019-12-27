@@ -10,6 +10,7 @@ function useFetch(url) {
         const json = await response.json();
         setData(json);
         setLoading(false);
+        console.log("render");
     }
 
     useEffect(() => {

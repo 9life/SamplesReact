@@ -1,5 +1,6 @@
 .details-icon{
-    margin: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .details-icon span{
@@ -13,7 +14,7 @@
 .weather-block{
     border: chocolate;
     border-style: dotted;
-    width: 400px;
+    width: 350px;
     text-align: center;
 }
 
