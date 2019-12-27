@@ -1,0 +1,32 @@
+.details-icon{
+    margin: 5px;
+}
+
+.details-icon span{
+    padding: 7px;
+}
+
+.weather-block p{
+    margin: 10px;
+}
+
+.weather-block{
+    border: chocolate;
+    border-style: dotted;
+    width: 400px;
+    text-align: center;
+}
+
+.weather-app{
+    width: 500px;
+}
+
+.weather-app input{
+    width: 290px;
+    display: inline;
+    margin-right: 10px;
+}
+
+.weather-app button{
+    display: inline;
+}
