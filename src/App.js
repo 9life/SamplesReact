@@ -18,6 +18,7 @@ import Shop from './shoppingCart/ShoppingApp';
 import TodoApp from './todoList/TodoApp';
 import Weather from './weather/Wapp';
 import Wthr2App from './weather/wthr2/Wthr2App';
+import Photos from './FechExmpl/Photos';
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
         <Route path="/todo" component={TodoApp}/>
         <Route path="/weather" component={Weather}/>
         <Route path="/weather2" component={Wthr2App}/>
+        <Route path="/fetch" component={Photos}/>
         <Route path="/holcalc" component={HolCalc}/>
         <Route path="/crud" component={AppUsers}/>
         <Route path="/productlistexmpl" component={ProductList}/>
