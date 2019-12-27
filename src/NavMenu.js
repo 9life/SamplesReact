@@ -33,6 +33,7 @@ export default function NavMenu() {
                   <MenuItem component={Link} to="/fire">Fire</MenuItem>
                   <MenuItem component={Link} to="/todo">Todo list</MenuItem>
                   <MenuItem component={Link} to="/weather">Weather</MenuItem>
+                  <MenuItem component={Link} to="/weather2">Weather2</MenuItem>
                   <MenuItem component={Link} to="/holcalc">Holiday calc</MenuItem>
                   <MenuItem component={Link} to="/crud">CRUD exmpl</MenuItem>
                   <MenuItem component={Link} to="/productlistexmpl">shop exmpl</MenuItem>
