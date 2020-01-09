@@ -19,6 +19,7 @@ import TodoApp from './todoList/TodoApp';
 import Weather from './weather/Wapp';
 import Wthr2App from './weather/wthr2/Wthr2App';
 import Photos from './FechExmpl/Photos';
+import Game from './TicTacToe/Game';
 
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/todo" component={TodoApp}/>
         <Route path="/weather" component={Weather}/>
         <Route path="/weather2" component={Wthr2App}/>
+        <Route path="/tictactoe" component={Game}/>
         <Route path="/fetch" component={Photos}/>
         <Route path="/holcalc" component={HolCalc}/>
         <Route path="/crud" component={AppUsers}/>
